@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap');
+
+.font-roboto-serif {
+  font-family: 'Roboto Serif', serif !important;
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pop-animation {
+  animation: pop 0.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Coming Soon badge style with top rounded corners and fixed width */
+.coming-soon-badge {
+  background-color: #22644B; /* dark green */
+  width: fit-content;
+  min-width: 140px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  top: 0.5rem;
+  /* position is handled in JSX */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  letter-spacing: 0.05em;
+  user-select: none;
+  font-weight: 600;
+}
