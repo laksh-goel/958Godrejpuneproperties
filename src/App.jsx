@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -17,35 +16,39 @@ import Footer from './components/Footer';
 import InfoCard from './components/Infocard';
 import ContactForm from './components/ContactForm';
 
-
 const App = () => {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen flex flex-col">
-           <Header />
+
+      {/* Header and InfoCard */}
+      <div className="relative">
+        <Header />
+        <div className="block md:absolute md:top-20 md:left-[1%] md:transform md:-translate-x-[1%] md:z-10 w-full md:w-1/2 px-4">
+          <InfoCard />
         </div>
-        <div
-        className="flex-grow bg-cover bg-center flex items-start justify-start p-8"
-   
-      >
-        <InfoCard />
       </div>
-      <main>
-        <ContactForm/>
+
+    <div className="hidden md:block fixed top-0 right-0 w-[350px] h-screen overflow-y-auto bg-white shadow-lg z-40">
+      <div className="pt-16 p-4"> {/* This padding offsets the navbar height */}
+        <ContactForm />
+      </div>
+    </div>
+
+      {/* Main Content - add margin to avoid overlap */}
+      <main className="md:mr-[370px] px-4 md:px-8 mt-10">
         <AboutUs />
         <PricingSlider />
-        <PlanSection/>
+        <PlanSection />
         <AmenitiesSlider />
         <Gallery />
         <LocationSection />
         <Developer />
         <ScheduleVisit />
         <Footer />
-  
       </main>
     </div>
   );
 };
 
-export default App;
+export default App;
